@@ -1,0 +1,28 @@
+ctrl+,
+
+type inlay return
+
+type checking mode
+
+
+#debugpyinstruction 
+import debugpy
+debugpy.listen(5678)
+debugpy.wait_for_client()
+
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python: Attach",
+            "type": "debugpy",
+            "request": "attach",
+            "justMyCode": true,
+            "connect": {
+                "host": "localhost",
+                "port": 5678
+            },
+            
+        }
+    ]
+}
